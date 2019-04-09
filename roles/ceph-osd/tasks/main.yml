@@ -50,15 +50,11 @@
   include_tasks: scenarios/lvm.yml
   when:
     - lvm_volumes|length > 0
-  # Hard code this so we will skip the entire file instead of individual tasks (Default isn't Consistent)
-  static: False
 
 - name: include_tasks scenarios/lvm-batch.yml
   include_tasks: scenarios/lvm-batch.yml
   when:
     - devices|length > 0
-  # Hard code this so we will skip the entire file instead of individual tasks (Default isn't Consistent)
-  static: False
 
 - name: include_tasks start_osds.yml
   include_tasks: start_osds.yml
